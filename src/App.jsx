@@ -25,9 +25,9 @@ function App() {
       return false
     }
   
-    if (search && !product.name.toLowerCase().includes(search.toLowerCase())) {
-      return false
-    }
+    // if (search && !product.name.toLowerCase().includes(search.toLowerCase())) {
+    //   return false
+    // }
     if (range > 0 && parseFloat(product.price.replace('$', '')) > Number(range)) {
       return false
     } 
