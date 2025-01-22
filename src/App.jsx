@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { Input } from "./components/forms/input"
-import { Checkbox } from "./components/forms/checkbox"
-import { ProductCategoryRaw } from "./components/forms/products/ProductCategoryRaw"
-import { ProductRaw } from "./components/forms/products/ProductRaw"
-import { Range } from "./components/forms/Range"
+import { Input } from "./components/forms/Input.jsx"
+import { Checkbox } from "./components/forms/Checkbox.jsx"
+import { ProductCategoryRaw } from "./components/forms/products/ProductCategoryRaw.jsx"
+import { ProductRaw } from "./components/forms/products/ProductRaw.jsx"
+import { Range } from "./components/forms/Range.jsx"
 
 const PRODUCTS = [
   { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
@@ -25,9 +25,9 @@ function App() {
       return false
     }
   
-    // if (search && !product.name.toLowerCase().includes(search.toLowerCase())) {
-    //   return false
-    // }
+    if (search && !product.name.toLowerCase().includes(search.toLowerCase())) {
+      return false
+    }
     if (range > 0 && parseFloat(product.price.replace('$', '')) > Number(range)) {
       return false
     } 
